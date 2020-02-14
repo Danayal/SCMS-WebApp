@@ -12,16 +12,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">	
 	<link href="style.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='custom.css' rel='stylesheet' type='text/css'>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-	<script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&libraries=visualization">
-</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&libraries=visualization"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&sensor=true&callback=initialize"></script>
+
 </head>
 <body>
 
 
 	<!-- AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74 -->
+	
 <!-- Navigation -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light -">
@@ -419,66 +419,32 @@ new Chart(document.getElementById("doughnut-chart"), {
       }
     }
 });
-// var ctx = document.getElementById('constCenter').getContext('2d');
-// ctx.height = 10;
-
-
-
-// var myDoughnutChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: {
-//         labels: ['ESB', 'SBA', 'CAAD', 'Main Building', 'Student Center', 'LAN'],
-//         datasets: [{
-//             label: '# of bikes',
-//             data: [2, 1, 4, 5, 3, 0],
-           
-//         }]
-//     },
-// });
 
 </script>
 
 
-	</div>
+</div>
 
-
+<div class = "container-fluid padding"> <!-- padding between row and column-->
+	<h2>Plan</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
-		<h2>Plan</h2>
-		<div class = "container-fluid padding"> <!-- padding between row and column-->
 	
-	<h3>View activity heat maps</h3>
+<h3>View activity heat maps</h3>
 
-	<script>
-/* Data points defined as an array of LatLng objects */
-var heatmapData = [
-  new google.maps.LatLng(37.782, -122.447),
-  new google.maps.LatLng(37.782, -122.445),
-  new google.maps.LatLng(37.782, -122.443),
-  new google.maps.LatLng(37.782, -122.441),
-  new google.maps.LatLng(37.782, -122.439),
-  new google.maps.LatLng(37.782, -122.437),
-  new google.maps.LatLng(37.782, -122.435),
-  new google.maps.LatLng(37.785, -122.447),
-  new google.maps.LatLng(37.785, -122.445),
-  new google.maps.LatLng(37.785, -122.443),
-  new google.maps.LatLng(37.785, -122.441),
-  new google.maps.LatLng(37.785, -122.439),
-  new google.maps.LatLng(37.785, -122.437),
-  new google.maps.LatLng(37.785, -122.435)
-];
 
-var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
 
-map = new google.maps.Map(document.getElementById('map'), {
-  center: sanFrancisco,
-  zoom: 13,
-  mapTypeId: 'satellite'
-});
 
-var heatmap = new google.maps.visualization.HeatmapLayer({
-  data: heatmapData
-});
-heatmap.setMap(map);		</script>
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
@@ -502,50 +468,11 @@ heatmap.setMap(map);		</script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--- Two Column Section -->
-
-
-<!--- Fixed background -->
-
-
-<!--- Emoji Section -->
-
-  
-<!--- Meet the team -->
-
-
-<!--- Cards -->
-
-
-<!--- Two Column Section -->
-
-
-<!--- Connect -->
-
-
-<!--- Footer -->
-
-
-
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZHONZUbW_8UHC4SRxOZ9pdFLUxPwlad8"></script>
-<script src="custom.js"></script>
 
-</body>
+
+</body>	
 </html>
 
 
