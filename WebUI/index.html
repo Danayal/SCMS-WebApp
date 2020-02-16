@@ -13,8 +13,6 @@
 	<link href="style.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&libraries=visualization"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&sensor=true&callback=initialize"></script>
 
 </head>
 <body>
@@ -144,6 +142,10 @@
 	<h2>Manage</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
 
+
+
+<!-- Register a bike-->
+
 <h3>Register a new bike</h3>
 <form>
 	<div class="row">
@@ -179,6 +181,8 @@
 <hr>
 
 
+<!-- Register a slot -->
+
 <div class = "container-fluid planning">
 <h3>Register a slot</h3>
 <form>
@@ -207,6 +211,10 @@
 <hr>
 
 <div class = "container-fluid planning">
+
+
+	<!-- View Bike status  -->
+
 
 <h3> View Bike Status </h3>
 
@@ -303,6 +311,9 @@
 <hr>
   <div class = "container-fluid planning">
 
+
+	<!-- View System Reports -->
+
 	<h3> View System Reports </h3>
 	<canvas id="bikeSlots" ></canvas>
 <script>
@@ -394,6 +405,10 @@ var myChart = new Chart(ctx, {
 
 <hr>
   <div class = "container-fluid planning">
+
+	<!-- View Cost Center -->
+
+
 <h3> View Cost Center </h3>
 
 <canvas id="doughnut-chart" ></canvas>
@@ -428,35 +443,116 @@ new Chart(document.getElementById("doughnut-chart"), {
 <div class = "container-fluid padding"> <!-- padding between row and column-->
 	<h2>Plan</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
-	
-<h3>View activity heat maps</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 
 
 <!-- Register a bike-->
-<!-- Register a slot-->
-<!-- View bike status-->
-<!-- View system reports-->
-<!-- Cost center-->
+
+<h3>View Activity Heatmaps </h3>
+</div>
+</div>
+</div>
+
+  <div id="map"></div>
+  <script>
+
+	// This example requires the Visualization library. Include the libraries=visualization
+	// parameter when you first load the API. For example:
+	// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+
+	var map, heatmap;
+
+	function initMap() {
+	  map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 17,
+		center: {lat: 25.3121, lng: 55.4927},
+		mapTypeId: 'satellite'
+
+
+	  });
+
+	  heatmap = new google.maps.visualization.HeatmapLayer({
+		data: getPoints(),
+		map: map
+	  });
+	}
+
+	function toggleHeatmap() {
+	  heatmap.setMap(heatmap.getMap() ? null : map);
+	}
+
+	function changeGradient() {
+	  var gradient = [
+		'rgba(0, 255, 255, 0)',
+		'rgba(0, 255, 255, 1)',
+		'rgba(0, 191, 255, 1)',
+		'rgba(0, 127, 255, 1)',
+		'rgba(0, 63, 255, 1)',
+		'rgba(0, 0, 255, 1)',
+		'rgba(0, 0, 223, 1)',
+		'rgba(0, 0, 191, 1)',
+		'rgba(0, 0, 159, 1)',
+		'rgba(0, 0, 127, 1)',
+		'rgba(63, 0, 91, 1)',
+		'rgba(127, 0, 63, 1)',
+		'rgba(191, 0, 31, 1)',
+		'rgba(255, 0, 0, 1)'
+	  ]
+	  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+	}
+
+	function changeRadius() {
+	  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+	}
+
+	function changeOpacity() {
+	  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+	}
+
+	// Heatmap data: 500 Points
+	function getPoints() {
+	  return [
+		new google.maps.LatLng(25.3121, 55.4927),
+		new google.maps.LatLng(25.3131, 55.4937),
+		new google.maps.LatLng(25.3141, 55.4947),
+		new google.maps.LatLng(25.3151, 55.4937),
+		new google.maps.LatLng(25.3141, 55.4927),
+		new google.maps.LatLng(25.3141, 55.4917),
+		new google.maps.LatLng(25.3121, 55.4937),
+		new google.maps.LatLng(25.3121, 55.4937),
+		new google.maps.LatLng(25.3121, 55.4957),
+		new google.maps.LatLng(25.3121, 55.4967),
+
+	
+	  ];
+	}
+  </script>
+  <script async defer
+	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&libraries=visualization&callback=initMap">
+  </script>
+
+
+<hr>
+  <div class = "container-fluid planning">
+
+
+	<!-- View System Reports -->
+
+	<h3> Plan Bike Routes </h3>
+	<div class = "container-fluid planning">
+
+		
+
+		</div>
+		</div>
+
 
 
 <!-- Plan section-->
 <!-- View activity heatmaps-->
+
+
+
 <!-- Plan Bike routes-->
 
 
