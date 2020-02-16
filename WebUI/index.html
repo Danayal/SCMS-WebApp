@@ -38,13 +38,13 @@
 		  <a class="nav-item nav-link" href="#">Home</a>
 		</li>
 		<li class="nav-item">
-		  <a class="nav-item nav-link" href="#">Manage</a>
+		  <a class="nav-item nav-link" href="#manage">Manage</a>
 		</li>
 		<li class="nav-item">
-		  <a class="nav-item nav-link" href="#">Plan</a>
+		  <a class="nav-item nav-link" href="#plan">Plan</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-item nav-link" href="#">Track</a>
+			<a class="nav-item nav-link" href="#track">Track</a>
 		  </li>
 		<li class="nav-item">
 			<a class="nav-item nav-link" href="#">Contact</a>
@@ -138,10 +138,10 @@
 
 
 <!-- Manage Section-->
+<div id = "manage"></div>
 <div class = "container-fluid padding"> <!-- padding between row and column-->
 	<h2>Manage</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
-
 
 
 <!-- Register a bike-->
@@ -439,11 +439,11 @@ new Chart(document.getElementById("doughnut-chart"), {
 
 
 </div>
-
+</div>
+<div id = "plan">
 <div class = "container-fluid padding"> <!-- padding between row and column-->
 	<h2>Plan</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
-
 
 
 <!-- Register a bike-->
@@ -541,12 +541,125 @@ new Chart(document.getElementById("doughnut-chart"), {
 	<h3> Plan Bike Routes </h3>
 	<div class = "container-fluid planning">
 
-		
+
 
 		</div>
 		</div>
 
+	</div>	
 
+		<hr>
+		<div id = "track">
+
+		<div class = "container-fluid planning">
+
+			<h2>Track</h2>
+			<div class = "container-fluid planning"></div>
+			<h3>View User Violations and Warn/Ban/Fine Users</h3>
+			<div class = "container-fluid planning">
+				<table class="table table-hover">
+					<caption>List of users</caption>
+
+					<thead>
+					  <tr>
+						<th scope="col">Name</th>
+						<th scope="col">AUS ID</th>
+						<th scope="col">Role</th>
+						<th scope ="col"> Description</th>
+						<th scope = "col"> State</th>
+						<th scope = "col">Action</th>
+
+					  </tr>
+					</thead>
+					<tbody>
+						<tr class="table-default">
+						<td >Danayal Khan</td>
+						<td>69350</td>
+						<td>Developer</td>
+						<td>Normal Behavior</td>
+						<td>Inactive</td>
+						<td>
+							
+							
+							<button type="button" class="btn btn-primary">Warn</button>
+							<button type="button" class="btn btn-secondary">Fine</button>
+							<button type="button" class="btn btn-danger">Ban</button>
+
+						
+						
+						
+						</td>					  </tr>
+					  <tr>
+						<tr class="table-default">
+						<td>Ahmed Riaz</td>
+						<td>70620</td>
+						<td>Student</td>
+						<td>Normal Behavior</td>
+						<td>Reserved bike</td>
+
+
+						<td>
+							
+							
+							<button type="button" class="btn btn-primary">Warn</button>
+							<button type="button" class="btn btn-secondary">Fine</button>
+							<button type="button" class="btn btn-danger">Ban</button>
+
+						
+						
+						
+						</td>
+					  </tr>
+					  <tr>
+						<tr class="table-warning">
+						<td>Shavaiz Khan</td>
+						<td>67567</td>
+						<td>Student</td>
+						<td>May be wreckless</td>
+						<td>Riding Bike 1</td>
+
+
+						<td>
+							
+							
+							<button type="button" class="btn btn-primary">Warn</button>
+							<button type="button" class="btn btn-secondary">Fine</button>
+							<button type="button" class="btn btn-danger">Ban</button>
+						
+						
+						
+						</td>
+					  </tr>
+					  <tr>
+						<tr class="table-danger">
+						<td>Moustafa</td>
+						<td>62049</td>
+						<td>Faculty</td>
+						<td>Dangerous Riding</td>
+						<td>Riding Bike 2</td>
+
+
+						<td>
+							
+							
+							<button type="button" class="btn btn-primary">Warn</button>
+							<button type="button" class="btn btn-secondary">Fine</button>
+							<button type="button" class="btn btn-danger">Ban</button>
+
+						
+						
+						
+						</td>
+					  </tr>
+					</tbody>
+				  </table>
+
+
+				
+
+				</div>
+				</div>
+			
 
 <!-- Plan section-->
 <!-- View activity heatmaps-->
