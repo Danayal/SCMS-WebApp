@@ -1,0 +1,673 @@
+<!--need slot ID in register bike, and only need bike id and remove the scroller
+
+in register slot, remove scroll id, add location with slot number
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Campus Mobility System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
+    <link href="style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74 -->
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light -">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"><img src="img/bike1.png" style width=2 0% height=2 0%> Smart Campus Mobility System</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-item nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#manage">Manage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#plan">Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#track">Track</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- popover for bike info -->
+
+    <!--- Image Slider -->
+
+    <!-- sliders for the carousel -->
+    <!-- 
+<div id = "slides" class = "carousel slide" data-ride = "carousel">
+	<ul class = "carousel-indicators">
+		<li data-target = "#slides" data-side-to ="0" class = "active"></li>
+		<li data-target = "#slides" data-side-to ="2"></li>
+		<li data-target = "#slides" data-side-to ="3"></li>
+	</ul>
+
+	<div class = "carousel-inner">
+		<div class = "carousel-item active ">
+			<img src = "img/carousel1.png" style width = 100%" height = 60%>
+			<div class = "carousel-caption">
+			</div>
+
+		</div>
+
+	<div class = "carousel-item">
+		<img src = "img/mac.png" style width = 100%" height = 60%>
+	</div>
+
+	<div class = "carousel-item">
+		<img src = "img/background.png"style width = 100%" height = 60%>
+	</div>
+</div>
+</div>
+ -->
+
+    <!--- Jumbotron -->
+
+    <!--- Welcome Section -->
+    <div class="container-fluid padding">
+        <!-- padding between row and column-->
+        <div class="row welcome text-center">
+            <!--welcome is a class defined later in css-->
+            <div class="col-12">
+                <!--  bootstrap has 12 cols -->
+                <h1 class="display-4"> Built with love.</h1>
+            </div>
+            <hr>
+            <!-- an underline -->
+            <div class="col-12">
+                <p class="lead">
+                    Welcome to the Administration Portal of Smart Campus Mobility System. Here, you can manage, plan, and monitor your electric bike sharing system. Enjoy!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--- Three Column Section -->
+
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-tasks"></i>
+                <h3>Manage</h3>
+                <p> Register a bike, register a slot, view bike status, view system reports, cost center </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-ruler"></i>
+                <h3>Plan</h3>
+                <p> View acitvity heatmaps, plan bike routes </p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <i class="fas fa-hard-hat"></i>
+                <h3>User safety</h3>
+                <p> View user violations, view violation details, warn/ban/fine users </p>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+
+    <div id="addAdmin"></div>
+    <div class="container-fluid padding">
+        <!-- padding between row and column-->
+        <h2>Add Admin</h2>
+        <div class="container-fluid padding">
+            <!-- padding between row and column-->
+
+            <h3>Add a new admin</h3>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" placeholder="Admin Email Address">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Section-->
+    <div id="manage"></div>
+
+    <div class="container-fluid padding">
+        <!-- padding between row and column-->
+        <h2>Manage</h2>
+        <div class="container-fluid padding">
+            <!-- padding between row and column-->
+
+            <!-- Register a bike-->
+
+            <h3>Register a new bike</h3>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Bike ID" id="bikeID">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" placeholder="Slot ID" id="slotID">
+                    </div>
+                </div>
+
+            </form>
+
+            <br/>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+
+        <hr>
+
+        <!-- Register a slot -->
+
+        <!-- <form>
+	<div class="row">
+	  <div class="col">
+		<input type="text" class="form-control" placeholder="Bike ID" id ="bikeID">
+	  </div>
+	  <div class="col">
+		<input type="number" class="form-control" placeholder="Slot ID" id = "slotID">
+	  </div>
+	  </div>
+
+  </form>	
+
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+<div class = "container-fluid planning"> -->
+        <h3>Register a slot</h3>
+
+        <form>
+
+            <div class="form-row">
+
+                <div class="col form-group">
+
+                    <label for="slotLocationForm"></label>
+
+                    <select class="form-control" id="slotLocationForm">
+                        <option id="ESB">ESB</option>
+                        <option id="PHY">PHY</option>
+                        <option id="SBA">SBA</option>
+                        <option id="EB">EB</option>
+                        <option id="MB">MB</option>
+                        <option id="SC">SC</option>
+                    </select>
+        </form>
+
+        </div>
+        
+
+        <div class="col">
+            <input type="number" class="form-control" placeholder="Location Slot Number" id="locSlotNumb">
+        </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+
+    <hr>
+
+    <div class="container-fluid planning">
+
+        <!-- View Bike status  -->
+
+        <h3> View Bike Status </h3>
+
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Bike 1</a>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Bike 2</button>
+        </p>
+        <div class="row">
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                Battery Level: 100%
+                            </div>
+                        </div>
+
+                        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJKaD3-4n19T4RkB-VBIddIjQ&key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card card-body">
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                Battery Level: 50%
+                            </div>
+                        </div>
+                        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJKaD3-4n19T4RkB-VBIddIjQ&key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="row">
+	<div class="col-4">
+	  <div class="list-group" id="list-tab" role="tablist">
+		<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Bike 1</a>
+		<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Bike 2</a>
+		<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Bike 3</a>
+		<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Bike 4</a>
+	  </div>
+	</div>
+	<div class="col-8">
+	  <div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+
+			<div class = "container-fluid">
+				<div class = "progress">
+			<div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+				Battery Level: 10%
+		</div>
+<div>
+		<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJKaD3-4n19T4RkB-VBIddIjQ&key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74" allowfullscreen></iframe>
+		</div>
+</div>
+		</div>
+		<div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+			<div class = "progress">
+				<div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+					Battery Level: 40%
+			</div>
+			<div id="map"></div>
+
+	</div>
+
+		</div>
+		<div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+			<div class = "progress">
+				<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+					Battery Level: 100%
+			</div>
+	</div>
+		</div>
+		<div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+			<div class = "progress">
+				<div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+					Battery Level: 50%
+			</div>
+	</div>
+		</div>
+	  </div>
+	</div>
+  </div> -->
+
+    <hr>
+    <div class="container-fluid planning">
+
+        <!-- View System Reports -->
+
+        <h3> View System Reports </h3>
+        <canvas id="bikeSlots"></canvas>
+        <script>
+            var ctx = document.getElementById('bikeSlots').getContext('2d');
+            ctx.height = 10;
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['ESB', 'SBA', 'CAAD', 'Main Building', 'Student Center', 'LAN'],
+                    datasets: [{
+                        label: '# of slots',
+                        data: [4, 2, 1, 3, 4, 1],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <canvas id="bikeNumber"></canvas>
+        <script>
+            var ctx = document.getElementById('bikeNumber').getContext('2d');
+            ctx.height = 10;
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['ESB', 'SBA', 'CAAD', 'Main Building', 'Student Center', 'LAN'],
+                    datasets: [{
+                        label: '# of bikes',
+                        data: [2, 1, 4, 5, 3, 0],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+    </div>
+
+    <hr>
+    <div class="container-fluid planning">
+
+        <!-- View Cost Center -->
+
+        <h3> View Cost Center </h3>
+
+        <canvas id="doughnut-chart"></canvas>
+        <script>
+            new Chart(document.getElementById("doughnut-chart"), {
+                type: 'doughnut',
+                data: {
+                    labels: ["Bikes Cost", "Maintainance Cost", "Spare Parts Cost", "Marketing", "Developers"],
+                    datasets: [{
+                        label: "Dirhams (AED)",
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                        data: [2000, 700, 500, 300, 1000]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Cost per Sector in Dirhams (AED)'
+                    }
+                }
+            });
+        </script>
+
+    </div>
+    </div>
+    <div id="plan">
+        <div class="container-fluid padding">
+            <!-- padding between row and column-->
+            <h2>Plan</h2>
+            <div class="container-fluid padding">
+                <!-- padding between row and column-->
+
+                <!-- Register a bike-->
+
+                <h3>View Activity Heatmaps </h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <script>
+        // This example requires the Visualization library. Include the libraries=visualization
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+
+        var map, heatmap;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: {
+                    lat: 25.3121,
+                    lng: 55.4927
+                },
+                mapTypeId: 'satellite'
+
+            });
+
+            heatmap = new google.maps.visualization.HeatmapLayer({
+                data: getPoints(),
+                map: map
+            });
+        }
+
+        function toggleHeatmap() {
+            heatmap.setMap(heatmap.getMap() ? null : map);
+        }
+
+        function changeGradient() {
+            var gradient = [
+                'rgba(0, 255, 255, 0)',
+                'rgba(0, 255, 255, 1)',
+                'rgba(0, 191, 255, 1)',
+                'rgba(0, 127, 255, 1)',
+                'rgba(0, 63, 255, 1)',
+                'rgba(0, 0, 255, 1)',
+                'rgba(0, 0, 223, 1)',
+                'rgba(0, 0, 191, 1)',
+                'rgba(0, 0, 159, 1)',
+                'rgba(0, 0, 127, 1)',
+                'rgba(63, 0, 91, 1)',
+                'rgba(127, 0, 63, 1)',
+                'rgba(191, 0, 31, 1)',
+                'rgba(255, 0, 0, 1)'
+            ]
+            heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+        }
+
+        function changeRadius() {
+            heatmap.set('radius', heatmap.get('radius') ? null : 20);
+        }
+
+        function changeOpacity() {
+            heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+        }
+
+        // Heatmap data: 500 Points
+        function getPoints() {
+            return [
+                new google.maps.LatLng(25.3121, 55.4927),
+                new google.maps.LatLng(25.3131, 55.4937),
+                new google.maps.LatLng(25.3141, 55.4947),
+                new google.maps.LatLng(25.3151, 55.4937),
+                new google.maps.LatLng(25.3141, 55.4927),
+                new google.maps.LatLng(25.3141, 55.4917),
+                new google.maps.LatLng(25.3121, 55.4937),
+                new google.maps.LatLng(25.3121, 55.4937),
+                new google.maps.LatLng(25.3121, 55.4957),
+                new google.maps.LatLng(25.3121, 55.4967),
+
+            ];
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPdAyvhgUmtLcg6a13XWLrf5FEaf8n74&libraries=visualization&callback=initMap">
+    </script>
+
+    <hr>
+    <div class="container-fluid planning">
+
+        <!-- View System Reports -->
+
+        <h3> Plan Bike Routes </h3>
+        <div class="container-fluid planning">
+
+        </div>
+    </div>
+
+    </div>
+
+    <hr>
+    <div id="track">
+
+        <div class="container-fluid planning">
+
+            <h2>Track</h2>
+            <div class="container-fluid planning"></div>
+            <h3>View User Violations and Warn/Ban/Fine Users</h3>
+            <div class="container-fluid planning">
+                <table class="table table-hover">
+                    <caption>List of users</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">AUS ID</th>
+                            <th scope="col">Role</th>
+                            <th scope="col"> Description</th>
+                            <th scope="col"> State</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-default">
+                            <td>Danayal Khan</td>
+                            <td>69350</td>
+                            <td>Developer</td>
+                            <td>Normal Behavior</td>
+                            <td>Inactive</td>
+                            <td>
+
+                                <button type="button" class="btn btn-primary">Warn</button>
+                                <button type="button" class="btn btn-secondary">Fine</button>
+                                <button type="button" class="btn btn-danger">Ban</button>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <tr class="table-default">
+                                <td>Ahmed Riaz</td>
+                                <td>70620</td>
+                                <td>Student</td>
+                                <td>Normal Behavior</td>
+                                <td>Reserved bike</td>
+
+                                <td>
+
+                                    <button type="button" class="btn btn-primary">Warn</button>
+                                    <button type="button" class="btn btn-secondary">Fine</button>
+                                    <button type="button" class="btn btn-danger">Ban</button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <tr class="table-warning">
+                                    <td>Shavaiz Khan</td>
+                                    <td>67567</td>
+                                    <td>Student</td>
+                                    <td>May be wreckless</td>
+                                    <td>Riding Bike 1</td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-primary">Warn</button>
+                                        <button type="button" class="btn btn-secondary">Fine</button>
+                                        <button type="button" class="btn btn-danger">Ban</button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <tr class="table-danger">
+                                        <td>Moustafa</td>
+                                        <td>62049</td>
+                                        <td>Faculty</td>
+                                        <td>Dangerous Riding</td>
+                                        <td>Riding Bike 2</td>
+
+                                        <td>
+
+                                            <button type="button" class="btn btn-primary">Warn</button>
+                                            <button type="button" class="btn btn-secondary">Fine</button>
+                                            <button type="button" class="btn btn-danger">Ban</button>
+
+                                        </td>
+                                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <!-- Plan section-->
+        <!-- View activity heatmaps-->
+
+        <!-- Plan Bike routes-->
+
+        <!-- User safety section-->
+        <!-- View user violations-->
+        <!-- View violation details-->
+        <!-- Warn ban fine users-->
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

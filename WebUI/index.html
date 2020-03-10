@@ -1,3 +1,8 @@
+<!--need slot ID in register bike, and only need bike id and remove the scroller
+
+in register slot, remove scroll id, add location with slot number
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +165,7 @@
 
 <!-- Manage Section-->
 <div id = "manage"></div>
+
 <div class = "container-fluid padding"> <!-- padding between row and column-->
 	<h2>Manage</h2>
 	<div class = "container-fluid padding"> <!-- padding between row and column-->
@@ -171,61 +177,82 @@
 <form>
 	<div class="row">
 	  <div class="col">
-		<input type="number" class="form-control" placeholder="Bike ID">
+		<input type="text" class="form-control" placeholder="Bike ID" id ="bikeID">
 	  </div>
 	  <div class="col">
-		<input type="text" class="form-control" placeholder="Bike Model">
+		<input type="number" class="form-control" placeholder="Slot ID" id = "slotID">
 	  </div>
-	</div>
-	<div class = "row">
-		<div class = "col">
-			<input type = "text" class = "form-control" placeholder = "Bike Color">
-		</div>
-		<div class = "col">
-			<input type = "text" class = "form-control" placeholder = "Bike Manufacturer">
-		</div>
-	</div>
-	<div class = "row">
-		<div class = "col">
-			<input type = "number" class = "form-control" placeholder = "Bike Price">
-		</div>
-		<div class = "col">
-			<input type = "date" class = "form-control" placeholder = "Data of purchase">
-		</div>
-	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-
+	  </div>
+	
   </form>	
 
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
 </div>
+
 
 <hr>
 
 
 <!-- Register a slot -->
 
-<div class = "container-fluid planning">
-<h3>Register a slot</h3>
-<form>
-	<div class="form-row">
+
+
+<!-- <form>
+	<div class="row">
 	  <div class="col">
-		<input type="number" class="form-control" placeholder="Slot ID">
+		<input type="text" class="form-control" placeholder="Bike ID" id ="bikeID">
 	  </div>
+	  <div class="col">
+		<input type="number" class="form-control" placeholder="Slot ID" id = "slotID">
+	  </div>
+	  </div>
+	
+  </form>	
+
+  <br/>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+<div class = "container-fluid planning"> -->
+<h3>Register a slot</h3>
+
+<form>
+
+	
+	<div class="form-row">
+
 	  
-	  <div class="col form-group" >
-		<label for="slotLocationForm"></label>
+	<div class="col form-group" >
+
+	<label for="slotLocationForm"></label>
+
     <select class="form-control" id="slotLocationForm" >
-      <option>ESB</option>
-      <option>CAAD</option>
-      <option>SBA</option>
-      <option>Main Building</option>
-      <option>ARTS</option>
-    </select>
+      <option id ="ESB">ESB</option>
+      <option id = "PHY">PHY</option>
+      <option id ="SBA">SBA</option>
+      <option id ="EB">EB</option>
+	  <option id = "MB">MB</option>
+	  <option id ="SC">SC</option>
+	</select>
+</form>
+
+</div>
+
+
+  <div class="col">
+	<input type="number" class="form-control" placeholder="Location Slot Number" id = "locSlotNumb">
   </div>
+
+  
 	</div>
+
+
+
 	<button type="submit" class="btn btn-primary">Submit</button>
 
-  </form>
 
 </div>
 

@@ -22,6 +22,7 @@
 }
 
 
+
 /*---Firefox Bug Fix --*/
 .carousel-item {
   transition: -webkit-transform 0.5s ease;
@@ -63,6 +64,8 @@ figure {
 [class*="col-"] {
     padding: 1rem;
 }
+
+
 
 
 
